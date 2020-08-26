@@ -62,7 +62,7 @@ export default function brotli(options = {}) {
       for (const file of files) {
         compressCollection.push(brotliCompressFile(file, options.options, options.minSize))
       }
-      await Promise.all(compressCollection)
+      return await Promise.all(compressCollection)
     }
   }
 }
